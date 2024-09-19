@@ -1,51 +1,83 @@
+/* Toàn bộ nền trang với chiều cao tối thiểu là 100% của viewport */
+body, html {
+  background-color: #2c2c2c; /* Nền tối xám đậm */
+  color: #ffffff; /* Màu chữ trắng */
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu là 100% của viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Container chính cho câu hỏi */
 .quiz-question {
-  margin: 20px auto;
-  width: 60%;
+  margin: 20px;
+  width: 70%;
+  max-width: 600px;
   text-align: center;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #3e3e3e; /* Nền của thẻ câu hỏi xám tối */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Phong cách cho câu hỏi */
 .question {
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #ffffff; /* Màu chữ trắng cho câu hỏi */
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
+/* Phong cách cho các tùy chọn */
 .options {
   list-style-type: none;
   padding: 0;
 }
 
 .option {
-  background-color: #eee;
-  padding: 10px 20px;
-  margin: 10px 0;
+  background-color: #4e4e4e; /* Nền của tùy chọn xám đậm */
+  padding: 12px 20px;
+  margin: 12px 0;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  font-size: 1.1rem;
+  color: #ffffff;
 }
 
 .option:hover {
-  background-color: #d5d5d5;
-  transform: scale(1.05);
+  background-color: #5e5e5e; /* Hiệu ứng hover */
+  transform: scale(1.02);
 }
 
+/* Đúng */
 .option.correct {
   background-color: #4caf50;
   color: white;
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
+  transform: scale(1.05);
 }
 
+/* Sai */
 .option.incorrect {
   background-color: #f44336;
   color: white;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
+/* Phản hồi */
 .feedback {
   margin-top: 20px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .feedback.correct {
@@ -55,18 +87,42 @@
 .feedback.incorrect {
   color: #f44336;
 }
+
+/* Nút tiếp theo */
 .next-button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 20px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .next-button:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quiz-question {
+    width: 90%;
+  }
+
+  .question {
+    font-size: 1.3rem;
+  }
+
+  .option {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .next-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 }

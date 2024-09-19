@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './index.css';  // Đảm bảo rằng bạn đã có file CSS
+import './index.css';
 
 const QuizQuestion = ({ question, options, correctAnswer, onAnswer, reset }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
